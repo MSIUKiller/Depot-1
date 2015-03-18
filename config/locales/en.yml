@@ -20,4 +20,28 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      product:
+        name: Name
+        description: Description
+        price: Price
+        weight: Weight
+  models:
+    product: Product
+  layouts:
+    show: Show
+    edit: Edit
+    back: Back
+    destroy: Destroy
+    confirmt: Are you sure?
+    newp: New product
+    listing: Listing products
+    editin: Editing product
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "&lsaquo; Prev"
+      next: "Next &rsaquo;"
+      truncate: "&hellip;"

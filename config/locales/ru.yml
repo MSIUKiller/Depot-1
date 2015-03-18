@@ -1,10 +1,29 @@
 ru:
   activerecord:
+    attributes:
+      product:
+        name: Имя
+        description: Описание
+        price: Цена
+        weight: Вес
+    models:
+      product: Товар
     atributes:
       product:
-        name: имя
-        description: описание
-        price: цена
-        weight: вес
-  models:
-    product: товар
+        name: "t 'layouts.'"
+  layouts:
+    show: Показать
+    edit: Редактировать
+    back: Назад
+    destroy: Удалить
+    confirmt: Вы уверены?
+    newp: Новый товар
+    listing: Список товаров
+    editin: Редактирование товара
+  views:
+    pagination:
+      first: "&laquo; В начало"
+      last: "В конец &raquo;"
+      previous: "&lsaquo; Предыдущая"
+      next: "Следующая &rsaquo;"
+      truncate: "&hellip;"

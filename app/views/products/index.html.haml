@@ -1,12 +1,12 @@
-%h1 Listing products
+%h1= t('layouts.listing')
 
 %table
   %thead
     %tr
-      %th Name
-      %th Description
-      %th Price
-      %th Weight
+      %th= t('activerecord.attributes.product.name')
+      %th= t('activerecord.attributes.product.description')
+      %th= t('activerecord.attributes.product.price')
+      %th= t('activerecord.attributes.product.weight')
       %th
       %th
       %th
@@ -18,12 +18,12 @@
         %td= product.description
         %td= product.price
         %td= product.weight
-        %td= link_to 'Show', product
-        %td= link_to 'Edit', edit_product_path(product)
-        %td= link_to 'Destroy', product, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to t('layouts.show'), product
+        %td= link_to t('layouts.edit'), edit_product_path(product)
+        %td= link_to t('layouts.destroy'), product, :method => :delete, :data => { :confirm => t('layouts.confirmt') }
 
 %br
 
   =paginate @products
 
-= link_to 'New Product', new_product_path
+= link_to t('layouts.newp'), new_product_path
