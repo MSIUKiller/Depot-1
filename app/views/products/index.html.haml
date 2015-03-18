@@ -1,29 +1,60 @@
 %h1= t('layouts.listing')
 
-%table
-  %thead
-    %tr
-      %th= t('activerecord.attributes.product.name')
-      %th= t('activerecord.attributes.product.description')
-      %th= t('activerecord.attributes.product.price')
-      %th= t('activerecord.attributes.product.weight')
-      %th
-      %th
-      %th
-      
-  %tbody
-    - @products.each do |product|
-      %tr
-        %td= product.name
-        %td= product.description
-        %td= product.price
-        %td= product.weight
-        %td= link_to t('layouts.show'), product
-        %td= link_to t('layouts.edit'), edit_product_path(product)
-        %td= link_to t('layouts.destroy'), product, :method => :delete, :data => { :confirm => t('layouts.confirmt') }
+-#%table
+-#  %thead
+-#    %tr
+-#      %th= t('activerecord.attributes.product.name')
+-#      %th= t('activerecord.attributes.product.description')
+-#      %th= t('activerecord.attributes.product.price')
+-#      %th= t('activerecord.attributes.product.weight')
+-#      %th
+-#      %th
+-#      %th
+-#
+-#  %tbody
+-#    - @products.each do |product|
+-#      %tr
+-#        %td= product.name
+-#        %td= product.description
+-#        %td= number_to_currency(product.price)
+-#        %td= product.weight
+-#        %td= link_to t('layouts.show'), product
+-#        %td= link_to t('layouts.edit'), edit_product_path(product)
+-#        %td= link_to t('layouts.destroy'), product, :method => :delete, :data => { :confirm => t('layouts.confirmt') }
+-#
+-#%br
 
-%br
+=paginate @products
 
-  =paginate @products
+%div{:class => ["list-group"]}
+  -@products.each do |product|
+    =link_to product, :class => "list-group-item" do
+      %div.row
+        %h4{:class => "list-group-item-text"}
+        %div{:class => "col-md-2"}
+          %p= product.name
+          %h4{:class => "list-group-item-text"}
+        %div{:class => "col-md-7"}
+          %p=product.description
+          %p{:class => "list-group-item-number"}
+        %div{:class => "col-md-1"}
+          %p= product.weight
+          %p{:class => "list-group-item-number"}
+        %div{:class => "col-md-2"}
+          %p= number_to_currency(product.price)
+        %div{:class => "col-md-1"}
+
+          -#%div{:class => "row-md-2"}
+          -#  = link_to t('layouts.edit'), edit_product_path(product), class:"btn btn-primary"
+          -#%div{:class => "row-md-2"}
+          -#  = link_to t('layouts.destroy'), product, :method => :delete, :data => { :confirm => t('layouts.confirmt') }
+
+=paginate @products
+
+-#<div class="btn-group btn-group-lg">
+-#  <button type="button" class="btn btn-primary">Apple</button>
+-#  <button type="button" class="btn btn-primary">Samsung</button>
+-#  <button type="button" class="btn btn-primary">Sony</button>
+-#</div>
 
 = link_to t('layouts.newp'), new_product_path

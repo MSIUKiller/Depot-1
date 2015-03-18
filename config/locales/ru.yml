@@ -10,7 +10,7 @@ ru:
       product: Товар
     atributes:
       product:
-        name: "t 'layouts.'"
+        name: Товар
   layouts:
     show: Показать
     edit: Редактировать

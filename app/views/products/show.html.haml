@@ -8,7 +8,7 @@
   = @product.description
 %p
   %b= t('activerecord.attributes.product.price')
-  = @product.price
+  = number_to_currency(@product.price)
 %p
   %b= t('activerecord.attributes.product.weight')
   = @product.weight
