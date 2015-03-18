@@ -27,6 +27,9 @@ en:
         description: Description
         price: Price
         weight: Weight
+        pwsd: Product was succesfully destroyed
+        pwsu: Product was succesfully updated
+        pwsc: Product was succesfully created
   models:
     product: Product
   layouts:

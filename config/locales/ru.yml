@@ -6,6 +6,9 @@ ru:
         description: Описание
         price: Цена
         weight: Вес
+        pwsd: Товар был успешно удален
+        pwsu: Товар был успешно обновлен
+        pwsc: Товар был успешно создан
     models:
       product: Товар
     atributes:
